@@ -1,0 +1,1 @@
+<div id="dialog_content"><?php echo $content; ?> </div>	

@@ -1,0 +1,45 @@
+body
+{
+	background-color:#FFFFFF;
+	font-size:75%;	
+}
+
+body>#chat,body>#footer,#menubar
+{
+	display:none;
+}
+
+#content_area
+{
+	width:100%;
+	margin: 0;
+}
+
+#content_area_wrapper
+{
+	border:0;
+}
+
+#sale_return_policy
+{
+	width:100%;
+	text-align:center;
+}
+
+.long_name
+{
+	display:none;
+}
+
+.short_name
+{
+	display:inline;
+}
+
+#receipt_items td
+{
+	white-space:nowrap;
+}
+nav.main-menu, nav.user,.linkBack,.linkPrint{
+	display: none;
+}

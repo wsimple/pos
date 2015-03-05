@@ -1,0 +1,321 @@
+#chat{
+	position:relative;
+	z-index:20000;
+}
+
+#chatMainContainer{
+	display:none;
+	position:fixed;/*container div must be absolute, for our fixed bar to work */
+	width:170px;
+	right:0px;
+	bottom:0px;
+	border:#aaa solid 1px;
+	box-shadow:0 0 5px #888;
+}
+
+#chatMainContainer .chatConfig{
+	width:100%;
+	height:28px;
+	background-color:#F4A543;
+	background-image:url(chat/iconChat.png);
+	background-repeat:no-repeat;
+	background-position:90px center;
+}
+#chatMainContainer .chatConfig > *{
+	margin:4px 0;
+}
+#chatMainContainer .chatConfig > input{
+	float:left;
+	margin-left:4px;
+	font-size:10px;
+	padding:1px;
+	resize:none;
+}
+#chatMainContainer .chatConfig > span{
+	display:inline-block;
+	float:right;
+	margin-right:4px;
+	width:20px;
+	height:20px;
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+}
+#chatMainContainer .chatConfig > span#hideChat{
+	background-image:url(chat/minimize.png);
+}
+#chatMainContainer .chatConfig > span#showChat{
+	background-image:url(chat/maximize.png);
+}
+
+#chatMainContainer .chatListContainer{
+	max-height:75%;
+	background-color:#eee;
+	border-right:#666 solid 1px;
+	overflow:auto;
+	overflow-x:hidden;
+}
+#chatMainContainer .chatListContainer #loading{
+	width:32px;
+	height:32px;
+	margin:4px auto;
+	background-image:url(chat/loader.gif);
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+}
+
+.chatbox{
+	position:fixed;
+	position:expression("absolute");
+	width:225px;
+	display:none;
+}
+
+.chatboxhead{
+	background-color:#f99d39;
+	padding:7px;
+	color:#fff;
+
+	border-right:1px solid #f99d39;
+	border-left:1px solid #f99d39;
+	
+	border-top-right-radius:5px 5px;
+	border-top-left-radius:5px 5px;
+	-moz-border-radius-topright:5px 5px;
+	-moz-border-radius-topleft :5px 5px;
+}
+.chatboxhead .minimize{
+	height:25px;
+	width:200px;
+	float:left;
+	position:absolute;
+	margin-left:-5px;
+	margin-top:-5px;
+	cursor:pointer;
+}
+
+#chatMainContainer .chatConfig.chatboxblink,.chatboxblink{
+	background-color:#176689;
+	border-right:1px solid #176689;
+	border-left:1px solid #176689;
+}
+
+.chatboxarea{
+	background-color:#FFF;
+	padding-left:7px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+
+.chatboxcontent{
+	font-family:arial,sans-serif;
+	font-size:13px;
+	color:#333;
+	height:200px;
+	width:209px;
+	overflow-y:auto;
+	overflow-x:auto;
+	background-color:#fff;
+	line-height:1.3em;
+	
+	white-space:-moz-pre-wrap; /* Mozilla */
+	white-space:-hp-pre-wrap; /* HP printers */
+	white-space:-o-pre-wrap; /* Opera 7 */
+	white-space:-pre-wrap; /* Opera 4-6 */
+	white-space:pre-wrap; /* CSS 2.1 */
+	white-space:pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap:break-word; /* IE */
+	-moz-binding:url('xbl.xml#wordwrap'); /* Firefox (using XBL) */
+}
+
+.typing{
+	visibility:hidden;
+	font-size:9px;
+	color:#999;
+}
+
+.chatboxinput{
+	padding:5px;
+	background-color:#fff;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	resize:none;
+	font-family:arial,sans-serif;
+	font-size:13px;
+}
+
+.chatboxtextarea{
+	width:206px;
+	height:44px;
+	padding:3px 0pt 3px 3px;
+	border:1px solid #eee;
+	margin:1px;
+	overflow:hidden;
+	resize:none;
+	font-family:arial,sans-serif;
+	font-size:13px;
+}
+
+.chatboxtextareaselected{
+	border:1px solid #f99d39;
+}
+
+.chatboxmessage{
+	margin-left:1em;
+}
+
+.chatboxinfo{
+	margin-left:-1em;
+	color:#666666;
+
+}
+
+.chatboxmessagefrom{
+	margin-left:-1em;
+	font-weight:bold;
+}
+
+.chatboxmessagecontent div{
+	
+	display:inline;
+	margin:0;
+	padding:8px;
+	padding-top:0;
+	padding-bottom:1px;
+	margin-right:2px;
+	margin-left:2px;
+	background-repeat:no-repeat;
+}
+
+#chat div.em{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	overflow:hidden;
+	padding:0;
+	margin:2px 1px 0;
+	background-image:url(chat/emojis.png);
+	background-size:325px;
+}
+.em.smile{
+	background-position:-64px -4px;
+}
+.em.bigSmile{
+	background-position:-122px -28px;
+}
+.em.sad{
+	background-position:-152px -28px;
+}
+.em.tongeOut{
+	background-position:-5px -28px;
+}
+.em.wink{
+	background-position:-152px -3px;
+}
+.em.surprise{
+	background-position:-271px -53px;
+}
+.em.surprise2{
+	background-position:-300px -53px;
+}
+.em.sob{
+	background-position:-299px -28px;
+}
+.em.crying{
+	background-position:-34px -52px;
+}
+.em.uneasy{
+	background-position:-93px -52px;
+}
+.em.hearteyes{
+	background-position:-32px -32px;
+}
+.em.heart{
+	background-position:-63px -52px;
+}
+.em.xD{
+	background-position:-33px -28px;
+}
+.em.shame{
+	background-position:-93px -28px;
+}
+.em.kiss{
+	background-position:-212px -4px;
+}
+
+.chatboxoptions{
+	float:right;
+}
+
+.chatboxoptions a{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+}
+
+.chatboxtitle{
+	float:left;
+}
+
+.listUserChat{
+	cursor:pointer;
+	padding:2px 5px;
+	-webkit-background-size:16px 16px;
+	background-size:16px 16px;
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-image:url(chat/offline.png);
+}
+.listUserChat:hover{
+	background-color:#F5F5F5;
+}
+.listUserChat.me,.listUserChat.me:hover{
+	background-color:#888;
+	color:#fff;
+}
+.listUserChat:before{
+	content:attr(data-name);
+}
+.listUserChat[data-status=online]{
+	background-image:url(chat/online.png);
+}
+.listUserChat[data-status=iddle]{
+	background-image:url(chat/iddle.png);
+}
+.listUserChat[data-status=offline]{
+	background-image:url(chat/offline.png);
+}
+
+.listUserChat a{
+	text-decoration:none;
+}
+.listUserChat .online{
+	float:right;
+	position:relative;
+	top:8px;
+	width:6px;
+	height:6px;
+	margin-right:5px;
+	border-radius:3px 3px;
+	-moz-border-radius:3px 3px;
+	-moz-border-radius:3px 3px;
+	background-color:#090;
+}
+.listUserChat .away{
+	float:right;
+	position:relative;
+	top:8px;
+	width:6px;
+	height:6px;
+	margin-right:5px;
+	border-radius:3px 3px;
+	-moz-border-radius:3px 3px;
+	-moz-border-radius:3px 3px;
+	background-color:#FC0;
+}
+.listUserChat .offline{
+	float:right;
+	position:relative;
+	top:10px;
+}

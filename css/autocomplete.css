@@ -1,0 +1,54 @@
+.ac_results 
+{
+	z-index: 1000001;
+	overflow: hidden;
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.ac_results ul 
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	list-style-position: outside;
+}
+
+.ac_results li 
+{
+	display: block;
+	overflow: hidden;
+	margin: 0px;
+	padding: 2px 5px;
+	font-size: 12px;
+	cursor: default;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+}
+
+.ac_loading 
+{
+	background: white url('../images/spinner_small.gif') right center no-repeat;
+}
+
+.ac_odd 
+{
+	background-color: #eee;
+}
+
+.ac_over 
+{
+	background-color: #0A246A;
+	color: white;
+}
