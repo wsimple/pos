@@ -54,6 +54,7 @@ class Inventory_compare extends CI_Model
         $this->con->select('id');
         $this->con->from('observation_inventories');
         $this->con->where('DATE(date_register)=DATE(NOW())');
+        //$this->con->where('DATE(date_register) = "'.date('Y-m-d').'"');
         if(!$this->con->get()->row_array()){ $b = false; }
         return $b;
     }

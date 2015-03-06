@@ -97,7 +97,7 @@ if(preg_match('/^(localhost|127\.\d\.\d\.\d|192\.168(\.\d{1,3}){2})/',$_SERVER['
 	$db['default']['swap_pre'] = '';
 	$db['default']['autoinit'] = TRUE;
 	$db['default']['stricton'] = FALSE;
-
+ 
 	//Obligatorio para envio para chat entre locations, locations y envio de items entre tiendas 
 	$db['centralized']['hostname'] = 'localhost';
 	$db['centralized']['username'] = 'arepa_ausrdb';
