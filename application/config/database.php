@@ -124,7 +124,7 @@ if ($mysql->connect_error === NULL) {
 //echo '<pre>'; print_r($db); echo '</pre>';
 	if ($result = $mysql->query($query)) {
 		while ($row = $result->fetch_assoc()) {
-			foreach ($row as $key => $value) {
+			foreach ($row as $key => $value) { // key = 'campo name'
 				if ($key == 'name')$group_name = $value;
 				$db[$group_name][$key] = $value;
 			}

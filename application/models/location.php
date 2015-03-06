@@ -200,7 +200,7 @@ class Location extends CI_Model {
 				$dbs[$key] = ucwords($key); //Creo arreglo para mis <option>
 			}
 		}
-
+		//echo '<pre>'; print_r($dbs); echo '</pre>';
 		return $dbs;
 	}
 

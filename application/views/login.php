@@ -19,8 +19,8 @@
 <body>
 
 <?php
-$dbs = $this->Location->get_select_option_list(false, true);
-$dbs['default']='Principal';
+	$dbs = $this->Location->get_select_option_list(false, true);
+	$dbs['default'] = 'Principal';
 ?>
 
 <div>
@@ -30,13 +30,13 @@ $dbs['default']='Principal';
 <div class="box-login">
 	<?=form_open('login',array('id'=>'form_login'))?>
 	<div  class="box-title clearfix">
-		<?=(trim(validation_errors())!='')?validation_errors():'Welcome to Fast i repair System. To continue, please login using your username and password below.'?>
+		<?=(trim(validation_errors())!='')?validation_errors():$this->lang->line('login_welcome_message')?>
 	</div>
 
 	<div class="clearfix">
 		<table class="box-table" border="0" cellpadding="0" cellspacing="0" width="340px">
 			<tr>
-				<td colspan="2" class="box-bkg-label-location"><?=form_label('Select your location:','locationbd')?></td>
+				<td colspan="2" class="box-bkg-label-location"><?=form_label($this->lang->line('login_location_label'),'locationbd')?></td>
 			</tr>
 			<tr>
 				<td colspan="2" class="box-bkg-drop-location">
@@ -71,19 +71,11 @@ $dbs['default']='Principal';
 				<td colspan="2" height="1"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><?=form_submit('loginButton','Login','class="form-button"')?></td>
+				<td colspan="2" align="center"><?=form_submit('loginButton',$this->lang->line('login_submit_labelb'),'class="form-button"')?></td>
 			</tr>
 		</table>
 	</div>
 </div>
-<?php
-// include('application/config/database.php'); //Incluyo donde estaran todas las config de las databses
-// $dbs = array();
-// foreach ($db as $key => $value) $dbs[$key] = ucwords($key); //Creo arreglo para mis <option>
-
-// echo form_label('Location:', 'locationbd');		//Etiqueta del helper form
-// echo form_dropdown('locationbd', $dbs, $_SESSION['dblocation']);		//<select> generado con el helper
-?>
 <?=form_close()?>
 <script type="text/javascript">
 (function($){
